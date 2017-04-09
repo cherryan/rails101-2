@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @posts = @group.posts
+    @posts = @group.posts.oder("created_at DESC")
   end
 
   def edit
